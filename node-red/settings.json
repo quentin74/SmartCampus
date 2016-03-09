@@ -1,0 +1,60 @@
+{
+	"kadira": { 
+  		"appId": "xx", 
+  		"appSecret": "xx" 
+ 	},
+
+	"twilio" : {
+		"ACCOUNT_SID": "xx",
+		"AUTH_TOKEN": "xx",
+		"NUMBER":  "+xx"
+	},
+
+	"free_sms" : {
+		"FREEACCOUNTID": "xxx",
+		"FREESMSKEY": "xx"
+	},
+
+	"orange_sms" : {
+		"ACCOUNTID": "xxx",
+		"SMSKEY": "xx"
+	},
+
+
+	"mail" : {
+  		"MAIL_URL" : "smtp://account@donsez:password@smtp.server.com:465",
+  		"FROM_ADDRESS" : "admin@opensmartcampus.org"
+	},
+
+	"mqtt_uplink" : {
+  		"mqttTopic": "rfxcom/sensor",
+		"qos":"1",
+		"retain": "true"
+	},
+	
+	"mqtt_broker" : {
+		"address" : "172.31.19.166",
+		"port" : "8883",
+		"clientid" : "",
+		"usetls" : true,
+		"verifyservercert" : false,
+		"username":"user",
+		"password":"Youpla1234!"
+	},
+
+	"mqtt_downlink" : {
+  		"mqttTopic": "test/test"
+	},
+
+	"modem_zwave" : {
+		"serial_port": "/dev/ttyACM0"
+	},
+
+	"modem_rfxcom" : {
+		"serial_port": "/dev/ttyUSB0"
+	},
+	
+	"motion" : {
+	
+	}
+}

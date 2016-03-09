@@ -1,0 +1,12 @@
+
+meteor/smartcamp/server/client.key
+
+meteor/smartcamp/server/client.csr
+
+meteor/smartcamp/server/client.crt
+
+meteor/smartcamp/server/ca.srl
+
+meteor/smartcamp/server/ca.key
+
+meteor/smartcamp/server/ca.crt

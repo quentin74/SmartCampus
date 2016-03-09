@@ -1,0 +1,4 @@
+meteor add bevanhunt:leaflet
+meteor add meteorhacks:npm
+npm install mqtt --save
+sudo npm install fs

@@ -1,0 +1,2 @@
+sudo service nodered stop
+sudo service nodered start

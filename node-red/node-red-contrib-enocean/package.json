@@ -1,0 +1,26 @@
+{
+  "name": "node-red-nodes-enocean-serial",
+  "version": "0.0.1",
+  "description": "Node-RED EnOcean In & Out nodes",
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/industrialinternet/node-red-nodes-enocean-serial.git"
+  },
+  "license": "Unknown",
+  "keywords": [
+    "node-red",
+    "enocean"
+  ],
+  "node-red": {
+    "nodes": {
+      "enocean-serial": "node-red-contrib-enocean-in-out-0-1.js"
+    }
+  },
+  "author": {
+    "name": "industrialinternet",
+    "url": "https://github.com/industrialinternet"
+  },
+  "_id": "node-red-nodes-enocean-serial@0.0.1"
+}

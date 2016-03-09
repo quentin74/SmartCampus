@@ -1,0 +1,124 @@
+<template name="Home">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<h2 id="page_title" class="pull-left">
+					Listes des données de la salle air affichées en temps réel.
+				</h2>
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		<p id="page_text">
+			Showing sensors from <a href="http://air.imag.fr/index.php/Salles_AIR" target="_blank">Salle air</a> in real-time. Server is connected to MQTT broker. Received messages are written into "Sensors" collection and shown to users.
+		</p>
+		{{> HomeView}}
+	</div>
+</template>
+
+<template name="HomeView">
+	<div id="home-view" class="">
+		<form id="dataview-controls" class="form-inline">
+			<div id="dataview-controls-search">
+				{{#if isNotEmpty}}
+				<div id="dataview-controls-search-group" class="form-group">
+					<label class="sr-only" for="search">
+						Search
+					</label>
+					<input type="text" class="form-control" id="dataview-search-input" placeholder="Search" name="search" value="{{searchString}}" autofocus="autofocus">
+					<button type="button" id="dataview-search-button" class="btn btn-primary">
+						<span class="fa fa-search">
+						</span>
+					</button>
+				</div>
+				{{/if}}
+			</div>
+			<div id="dataview-controls-export" class="form-group">
+				{{#if isNotEmpty}}			
+		{{#if isFound}}
+				<div>
+				</div>
+				{{else}}
+				<div class="btn-group">
+					<button type="button" class="btn btn-default" id="dataview-export-default">
+						Export
+					</button>
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						<span class="caret">
+						</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li>
+							<a href="#" id="dataview-export-csv">
+								Export to CSV
+							</a>
+						</li>
+						<li>
+							<a href="#" id="dataview-export-tsv">
+								Export to TSV
+							</a>
+						</li>
+						<li>
+							<a href="#" id="dataview-export-json">
+								Export to JSON
+							</a>
+						</li>
+					</ul>
+				</div>
+				{{/if}}			
+	{{/if}}
+			</div>
+		</form>
+		{{#if isNotEmpty}}	
+			{{#if isNotFound}}
+		<div class="alert alert-warning">
+			"{{searchString}}" not found.
+		</div>
+		{{else}}
+		<div id="dataview-data">
+			{{#if viewAsTable}} {{> HomeViewTable}} {{/if}}
+		</div>
+		{{/if}}	
+		{{else}}
+		<div class="alert alert-info">
+			Empty.
+		</div>
+		{{/if}}
+	</div>
+</template>
+
+<template name="HomeViewTable">
+	<table id="dataview-table" class="table table-striped">
+		<thead id="dataview-table-header">
+			<tr id="dataview-table-header-row">
+				<th class="th-sortable" data-sort="topic">
+					Date
+				</th>
+				<th class="th-sortable" data-sort="message">
+					Temperature
+				</th>
+				<th class="th-sortable" data-sort="modifiedAt">
+					Humidité
+				</th>
+			</tr>
+		</thead>
+		<tbody id="dataview-table-items">
+			{{#each tableItems}} {{> HomeViewTableItems}} {{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="HomeViewTableItems">
+	<tr id="dataview-table-items-row">
+		<td>
+			{{modifiedAt}}
+		</td>
+		<td>
+			{{temperature.value}} {{temperature.unit}}
+		</td>
+		<td>
+			{{humidity.value}} {{humidity.unit}} {{humidity.status}}
+		</td>
+	</tr>
+</template>
+

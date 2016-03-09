@@ -1,0 +1,20 @@
+<template name="grafana">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		<p>
+		{{> graf}}
+		</p>
+	</div>
+</template>
+
+<template name="graf">
+    <div id="container">
+      <iframe width= "100%" height="500" src="http://52.11.255.78:3000/dashboard/db/salle-air"></iframe>
+    </div>
+</template>
+
