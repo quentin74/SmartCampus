@@ -1,0 +1,23 @@
+{
+  "mqtt_options" : {
+		"port": 8883,
+		"host": "52.11.255.78",
+		"clientId": "GEST",
+		"username": "user",
+		"password": "Youpla1234!",
+		"qos":1,
+		"keepalive": 60,
+		"reconnectPeriod": 1000,
+		"protocol": "mqtts",
+		"protocolVersion": 4,
+		"clean": true,
+		"encoding": "utf8",
+		"key" : "client.key",
+		"ca" : "ca.crt",
+		"rejectUnauthorized": false,
+		"cert" :"client.crt"
+	},
+  "public": {
+
+  }
+}

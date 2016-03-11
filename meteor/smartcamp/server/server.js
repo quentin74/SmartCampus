@@ -5,31 +5,32 @@ Meteor.startup(function() {
 			process.env[variableName] = Meteor.settings.env[variableName];
 		}
 	}
-
-	
+var path = Meteor.npmRequire('path');
+var base = path.resolve('../../../../../server');
+//var base = path.resolve('/bundle/bundle/programs/server/app/server');
 
 var options = {
-port: 8883,
-host: 'YOUR_HOST_PUBLIC_IP',
-clientId: 'GEST',
-username: 'USERNAME',
-password: 'PASSWORD',
-keepalive: 60,
-reconnectPeriod: 1000,
-protocol: 'mqtts',
-protocolVersion: 4,
-clean: true,
-encoding: 'utf8',
-key : fs.readFileSync('server/client.key'),
-ca : fs.readFileSync('server/ca.crt'),
-rejectUnauthorized: false,
-cert :fs.readFileSync('server/client.crt'),
+port: Meteor.settings.mqtt_options.port,
+host: Meteor.settings.mqtt_options.host,
+clientId: Meteor.settings.mqtt_options.clientId,
+username: Meteor.settings.mqtt_options.username,
+password: Meteor.settings.mqtt_options.password,
+keepalive: Meteor.settings.mqtt_options.keepalive,
+reconnectPeriod: Meteor.settings.mqtt_options.reconnectPeriod,
+protocol: Meteor.settings.mqtt_options.protocol,
+protocolVersion: Meteor.settings.mqtt_options.protocolVersion,
+clean: Meteor.settings.mqtt_options.clean,
+encoding: Meteor.settings.mqtt_options.encoding,
+key : fs.readFileSync(path.resolve(base,Meteor.settings.mqtt_options.key)),
+ca : fs.readFileSync(path.resolve(base,Meteor.settings.mqtt_options.ca)),
+rejectUnauthorized: Meteor.settings.mqtt_options.rejectUnauthorized,
+cert :fs.readFileSync(path.resolve(base,Meteor.settings.mqtt_options.cert)),
 };
-
+//console.log(options);
 var mqttClient  = mqtt.connect(options);
 
 mqttClient.on('connect',Meteor.bindEnvironment( function () {
-  mqttClient.subscribe('rfxcom/sensor', {qos :1});
+  mqttClient.subscribe('rfxcom/sensor', {qos : Meteor.settings.mqtt_options.qos});
   console.log('connecté');
 
 }));
