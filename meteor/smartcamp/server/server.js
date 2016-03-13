@@ -39,13 +39,13 @@ mqttClient.on('message', Meteor.bindEnvironment(function (topic, message) {
   console.log(message.toString());
   var myObject = JSON.parse(message.toString());
   myObject._id=myObject.id;
-  if(Sensors.findOne(myObject._id) === 'undefined'){
+  var obj = Sensors.findOne(myObject._id);
+  if(typeof obj === 'undefined'){
 	console.log('Add data');
 	Sensors.insert(myObject);
   }else{
 	console.log('Update data');
-	modifier = myObject;
-	Sensors.update({_id: myObject._id},modifier);
+	Sensors.update(obj,{$set: myObject});
 	}
   
 }));
