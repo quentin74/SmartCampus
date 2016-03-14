@@ -50,7 +50,7 @@ then
 	echo "===Recuperation du git==="
 	cd ~/
 	git clone https://github.com/quentin74/Smartcampus.git
-	cp ~/Smartcampus/node-red/flows_* .node-red/
+	cp ~/Smartcampus/node-red/flows_* ~/.node-red/
 	cp ~/Smartcampus/node-red/getSerialId.py ~/.node-red/
 	cp ~/Smartcampus/node-red/nodered_restart ~/.node-red/
 	cp ~/Smartcampus/node-red/read_settings.js ~/.node-red/
