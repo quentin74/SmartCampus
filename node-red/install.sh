@@ -24,7 +24,7 @@ sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master
 sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
 sudo chmod +x /usr/bin/node-red-st*
 
-if [ ! -e v${VERSION}.zip ]
+if [ ! -e ./v${VERSION}.zip ]
 then
 	echo "===Installation de OpenZwave==="
 	wget https://github.com/OpenZWave/open-zwave/archive/v${VERSION}.zip
