@@ -19,7 +19,7 @@ then
 fi
 
 echo "===Configuration du démarrage de Node-Red au boot==="
-sudo wget https://raw.githubusercontent.com/quentin74/Smartcampus/master/node-red/nodered.service -O /lib/systemd/system/nodered.service
+sudo wget https://raw.githubusercontent.com/quentin74/Smartcampus/master/node-red/nodered.service?token=AHWGW55TXL3ynaXydHwEXr1ccVWb-Rgtks5W8Be5wA%3D%3D -O /lib/systemd/system/nodered.service
 sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-start -O /usr/bin/node-red-start
 sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
 sudo chmod +x /usr/bin/node-red-st*
@@ -48,6 +48,7 @@ fi
 if [ ! -d ~/Smartcampus ]
 then
 	echo "===Recuperation du git==="
+	cd ~/
 	git clone https://github.com/quentin74/Smartcampus.git
 	cp ~/Smartcampus/node-red/flows_* .node-red/
 	cp ~/Smartcampus/node-red/getSerialId.py ~/.node-red/
