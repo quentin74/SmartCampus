@@ -47,11 +47,11 @@
 	},
 
 	"modem_zwave" : {
-		"serial_port": "/dev/ttyACM0"
+		"serial_port": ""
 	},
 
 	"modem_rfxcom" : {
-		"serial_port": "/dev/ttyUSB0"
+		"serial_port": ""
 	},
 	
 	"motion" : {
