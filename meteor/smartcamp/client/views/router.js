@@ -9,7 +9,8 @@ Router.configure({
 var freeRoutes = [
 	"home",
 	"about",
-        "grafana"
+        "grafana",
+	"kadira"
 ];
 
 Router.onBeforeAction(function() {
@@ -28,4 +29,5 @@ Router.map(function () {
 	this.route("home", {path: "/", controller: "HomeController"});
 	this.route("about", {path: "/about", controller: "AboutController"});
 	this.route("grafana", {path: "/grafana", controller: "GrafanaController"});
+	this.route("kadira", {path: "/kadira", controller: "KadiraController"});
 });

@@ -19,5 +19,15 @@
 	},
   "public": {
 
+  },
+
+   "kadira": {
+		"appId" : "id8kbEvc3KqRxFJ4n",
+		"appSecret" : "c54c2ffb-843a-4e00-915a-4458177e89fb",
+		"options" : {
+		}
+
   }
+
+
 }

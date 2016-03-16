@@ -32,6 +32,7 @@ var mqttClient  = mqtt.connect(options);
 mqttClient.on('connect',Meteor.bindEnvironment( function () {
   mqttClient.subscribe('rfxcom/sensor', {qos : Meteor.settings.mqtt_options.qos});
   console.log('connecté');
+  //Sensors.remove({});
 
 }));
 
@@ -54,8 +55,8 @@ mqttClient.on('message', Meteor.bindEnvironment(function (topic, message) {
 		index++;
 	}
 	//console.log(arr[index]);
-	if(typeof obj[arr[index]] === 'undefined'){
-		Sensors.update(obj,{$push: myObject});	
+	if(typeof obj[arr[index]] === 'undefined'){		
+		Sensors.update(obj,{$set: myObject});	
 	}
 	else{
 		Sensors.update(obj,{$set: myObject});
