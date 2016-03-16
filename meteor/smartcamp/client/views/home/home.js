@@ -31,7 +31,7 @@ var HomeViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["topic", "message", "modifiedAt"];
+		var searchFields = ["topic", "Temperature","Humidity","Luminance", "modifiedAt"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {
@@ -61,7 +61,7 @@ var HomeViewItems = function(cursor) {
 
 var HomeViewExport = function(cursor, fileType) {
 	var data = HomeViewItems(cursor);
-	var exportFields = ["topic", "message", "modifiedAt"];
+	var exportFields = ["topic", "Temperature","Humidity","Luminance", "modifiedAt"];
 
 	var str = convertArrayOfObjects(data, exportFields, fileType);
 

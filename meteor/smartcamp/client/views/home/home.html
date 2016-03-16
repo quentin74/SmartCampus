@@ -92,13 +92,22 @@
 		<thead id="dataview-table-header">
 			<tr id="dataview-table-header-row">
 				<th class="th-sortable" data-sort="topic">
-					Date
+					Sensor ID
 				</th>
-				<th class="th-sortable" data-sort="message">
+				<th class="th-sortable" data-sort="Temperature">
 					Temperature
 				</th>
-				<th class="th-sortable" data-sort="modifiedAt">
+				<th class="th-sortable" data-sort="Humidity.value">
 					Humidité
+				</th>	
+				<th class="th-sortable" data-sort="Luminance.value">
+					Luminance
+				</th>
+				<th class="th-sortable" data-sort="modifiedAt">
+					Présence
+				</th>
+				<th class="th-sortable" data-sort="modifiedAt">
+					Date
 				</th>
 			</tr>
 		</thead>
@@ -111,13 +120,22 @@
 <template name="HomeViewTableItems">
 	<tr id="dataview-table-items-row">
 		<td>
-			{{modifiedAt}}
+			{{id}}
 		</td>
 		<td>
-			{{temperature.value}} {{temperature.unit}}
+			{{temperature.value}}{{Temperature.value}} °C
 		</td>
 		<td>
 			{{humidity.value}} {{humidity.unit}} {{humidity.status}}
+		</td>
+		<td>
+			{{Luminance.value}} {{Luminance.units}}
+		</td>
+		<td>
+			{{motion.value}}
+		</td>
+		<td>
+			{{modifiedAt}}
 		</td>
 	</tr>
 </template>

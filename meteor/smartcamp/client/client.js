@@ -14,17 +14,24 @@ Template.map.rendered = function() {
 
   var map = L.map('map', {
     doubleClickZoom: false
-  }).setView([45.1936093, 5.7739241], 15);
+  }).setView([45.1936093, 5.7739241], 13);
 
   L.tileLayer.provider('Thunderforest.Outdoors').addTo(map);
 
-  
+  var polytech = [[45.18489,5.75206],[45.18444,5.75213],[45.18401,5.75369],[45.18463,5.75396]];
+  var polyline = L.polygon(polytech, {color: 'red'}).addTo(map);
+
+
+  var fablab = [[45.19397,5.77057],[45.19401,5.77125],[45.19392,5.77126],[45.19388,5.77059]];
+  var polyline2 = L.polygon(fablab, {color: 'blue'}).addTo(map);
 
 
   map.on('dblclick', function(event) {
-    var popup = L.popup()
+   var obj = Sensors.findOne();
+   console.log(obj.temperature.value) 
+   var popup = L.popup()
       .setLatLng(event.latlng)
-      .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+      .setContent(obj.id.toString()+"<br/>"+obj.temperature.value.toString()+" "+obj.temperature.unit.toString())
       .openOn(map);
   });
 
