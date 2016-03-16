@@ -1,5 +1,5 @@
-//var ZWave = require('./node_modules/node-red-contrib-openzwave/node_modules/openzwave-shared/lib/openzwave-shared.js');
-var ZWave = require('openzwave-shared');
+var ZWave = require('./node_modules/node-red-contrib-openzwave/node_modules/openzwave-shared');
+//var ZWave = require('openzwave-shared');
 var zwave = new ZWave();
 var fs = require('fs');
 
@@ -132,10 +132,10 @@ zwave.on('controller command', function(r,s) {
     console.log('controller commmand feedback: r=%d, s=%d',r,s);
 });
 
-zwave.connect('/dev/ttyUSB21');
+zwave.connect('/dev/ttyACM0');
 
 process.on('SIGINT', function() {
     console.log('disconnecting...');
-    zwave.disconnect('/dev/ttyUSB21');
+    zwave.disconnect('/dev/ttyACM0');
     process.exit();
 });
