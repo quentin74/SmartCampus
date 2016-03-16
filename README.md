@@ -7,13 +7,14 @@ Projet d'étude  RICM5
 ### Les Technologies
 
 #### Materiel utilisé:
-*Gateways
+* Gateways
 Raspberry Pi 2 + Alimentation 5V DC
-*ZWave
+* ZWave
 Clé USB Sigma ZWave
 Détecteur de présence Aeon-labs ZWave
+
 Détecteur d'ouverture Zipato ZWave
-*Rfxcom
+* Rfxcom
 Récepteur RFXCom 443 MHz
 Station WMR88
 Sonde Oregon Hygro Baro
