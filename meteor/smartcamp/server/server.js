@@ -45,7 +45,22 @@ mqttClient.on('message', Meteor.bindEnvironment(function (topic, message) {
 	Sensors.insert(myObject);
   }else{
 	console.log('Update data');
-	Sensors.update(obj,{$set: myObject});
+	var arr = Object.keys(myObject);
+	//console.log(arr);
+	var index = 0;
+	//console.log(arr[index]);
+	
+	while((arr[index] == "id" || arr[index] == "_id" || arr[index] == "id_card")){
+		index++;
+	}
+	//console.log(arr[index]);
+	if(typeof obj[arr[index]] === 'undefined'){
+		Sensors.update(obj,{$push: myObject});	
+	}
+	else{
+		Sensors.update(obj,{$set: myObject});
+	}
+
 	}
   
 }));

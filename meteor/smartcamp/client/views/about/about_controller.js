@@ -19,6 +19,7 @@ this.AboutController = RouteController.extend({
 		
 
 		var subs = [
+			Meteor.subscribe("test")
 		];
 		var ready = true;
 		_.each(subs, function(sub) {
@@ -32,7 +33,8 @@ this.AboutController = RouteController.extend({
 		
 
 		return {
-			params: this.params || {}
+			params: this.params || {},
+			test: Sensors.find({}, {})
 		};
 		/*DATA_FUNCTION*/
 	},
