@@ -3,7 +3,6 @@ FabLab,b827eb17b46e-0xc65340d9-2,000000002317b46e,Motion sensor on door
 FabLab,TH2/0x5201,000000002317b46e,Temperature Sensor with screen/indoor
 FabLab,THB1/0x2E01,000000002317b46e,Barometre sensor
 FabLab,TH2/0xF401,000000002317b46e,Temperature Sensor without screen/outdoor
-Salle AIR,b827eb1165ea-0xf470ede4-2,,Motion sensor on door
-Salle AIR,b827eb1165ea-0xf470ede4-3,,Motion sensor next window
-Salle AIR,"b827eb1165ea-0xf470ede4-4
-",,Motion sensor next blackboard
+Salle AIR,b827eb1165ea-0xf470ede4-2,00000000691165ea,Motion sensor on door
+Salle AIR,b827eb1165ea-0xf470ede4-3,00000000691165ea,Motion sensor next window
+Salle AIR,b827eb1165ea-0xf470ede4-4,00000000691165ea,Motion sensor next blackboard
